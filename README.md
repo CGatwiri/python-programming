@@ -1,6 +1,6 @@
 # python-programming
 
-- Website: [bellevuecodeschool.com](http://www.bellevuecodeschool.com)
+- Website: [www.geekdojo.io](http://www.geekdojo.io)
 
 - Lecture node and study materials for the python programming course
 
