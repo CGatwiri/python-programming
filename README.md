@@ -489,3 +489,565 @@ Solve the two programming puzzles in page#107 and #108.
 ### Homework for this week
 ![alt text](./homework.png)
 
+---
+
+* * *
+
+* [Presentation for Week 5](https://docs.google.com/presentation/d/1FUcFb78FCY9WI3JxZdZJAR-JmhqIJ4gZu3GnRlptivg/edit?usp=sharing)
+
+
+### Review of Homework
+
+![alt text](/images/python_week5_homework.png)
+
+- name of class should start with upper case
+- variables and methods should be all lower case
+- Here is an example of the [source code](https://github.com/bellevuecodeschool/python-programming/blob/master/lecture6/shelter.py) for the homework
+
+
+* * *
+
+### Let's Practice Typing
+- Go to [Nitro Type](https://www.nitrotype.com)
+- Practice typing for 5 minutes
+- Let's measure your typing speed
+
+### Chapter 9 - Python’s Built-in Functions
+Launch IDLE
+
+##### input()
+```
+>>> year = input('Year of birth: ')
+Year of birth: 2000
+>>> 'You were born in {}'.format(year)
+'You were born in 2000'
+>>>
+```
+
+##### len(), min(), max(), sum()
+```
+>>> A = [5, 4, 10, 20, 30]
+>>> len(A)
+5
+>>> min(A)
+4
+>>> max(A)
+30
+>>> sum(A)
+69
+```
+
+##### type conversion
+```
+>>> a = '5.5'
+>>> int(a)
+Traceback (most recent call last):
+  File "<pyshell#42>", line 1, in <module>
+    int(a)
+ValueError: invalid literal for int() with base 10: '5.5'
+>>> float(a)
+5.5
+>>> bool(a)
+True
+>>> a = 0
+>>> bool(a)
+False
+>>> a = 10
+>>> a = '10'
+>>> a + 20
+Traceback (most recent call last):
+  File "<pyshell#49>", line 1, in <module>
+    a + 20
+TypeError: must be str, not int
+>>> int(a) + 20
+30
+```
+
+##### abs()
+```
+abs(-10)
+>>> if abs(steps) > 0:
+	print('character is moving')
+-> Recover (by typing on a line)
+```
+
+##### dir(), help()
+```
+>>> dir('hello')
+>>> help('hello'.upper)
+>>> 'hello'.upper()
+'HELLO'
+```
+
+##### eval()
+```
+eval()
+>>> formula = input('Enter formula: ')
+Enter formula: 12*52
+>>> eval(formula)
+624
+```
+
+##### File open / write
+
+```
+>>> file = open('C:\Users\jason\Documents\hello.txt')
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>> file = open('C:\\Users\\jason\\Documents\\hello.txt')
+>>> print(file.read())
+fdsfasfsfasfas
+>>>
+KeyboardInterrupt
+>>> file = open('C:\\hello.txt')
+
+>>> file = open('C:\\Users\\jason\\Documents\\hello2.txt', 'w')
+>>> file.write('This is a test.')
+15
+>>> file.close()
+```
+
+##### Quiz
+```
+>>>bool(4)
+>>>a, b = 10, ‘20’
+>>>a+b
+```
+
+### Code Combat
+- https://codecombat.com
+
+---
+
+# Week 7
+
+* * *
+
+* [Presentation for Week 7](https://docs.google.com/presentation/d/1FUcFb78FCY9WI3JxZdZJAR-JmhqIJ4gZu3GnRlptivg/edit?usp=sharing)
+
+
+### Review of Homework
+
+
+* * *
+
+### Let's Practice Typing
+- Go to [Nitro Type](https://www.nitrotype.com)
+- Practice typing for 5 minutes
+- Let's measure your typing speed
+
+* * *
+
+### Chapter 10 - Useful Python Modules
+
+##### turtle
+```
+>>> import turtle
+```
+
+##### random
+```
+>>> import random
+>>> A = [10, 20, 30, 40, 50]
+>>> random.choice(A)
+50
+>>> random.choice(A)
+30
+>>> random.choice(A)
+50
+>>> random.choice(A)
+30
+>>> random.choice(A)
+40
+```
+
+##### time
+```
+>>> import time
+>>> time.time()
+1511711769.7801137
+>>> time.time()
+1511711773.4365573
+>>> time.asctime()
+'Sun Nov 26 07:56:51 2017'
+>>> time.localtime()
+time.struct_time(tm_year=2017, tm_mon=11, tm_mday=26, tm_hour=7, tm_min=57, tm_sec=12, tm_wday=6, tm_yday=330, tm_isdst=0)
+>>> time.localtime()[0]
+2017
+>>>
+```
+
+##### pickle
+```
+>>> A = [10, 20, 30, 40, 50]
+>>> import pickle
+>>> pickle.dump(A, open('my_data.p', 'wb'))
+
+# Close IDLE and re-launch IDLE
+>>> A = pickle.load(open('my_data.p','rb'))
+>>> A
+[10, 20, 30, 40, 50]
+```
+
+* * *
+
+### Code Combat
+- https://codecombat.com
+
+---
+
+# Week 8 
+
+* * *
+
+
+### Chapter 12 - Using TKinter for Better Graphics
+
+#### GUI Programming
+
+##### Tkinter
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> btn = Button(tk, text='click here')
+>>> btn.pack()
+```
+
+* * *
+
+##### Button
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> def hello():
+	print('Hello!')
+>>> btn = Button(tk, text='Click here', command=hello)
+>>> btn.pack()
+```
+
+* * *
+
+##### Button + Messagebox
+```
+>>> from tkinter import *
+>>> from tkinter import messagebox
+>>> tk = Tk()
+>>> def about():
+	messagebox.showinfo('About', 'GUI v1.0')
+
+
+>>> btn = Button(tk, text='About', command=about)
+>>> btn.pack()
+```
+
+* * *
+
+##### Canvas
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> canvas = Canvas(tk, width=500, height=500)
+>>> canvas.pack()
+>>> canvas.create_line(0, 0, 500, 500)
+```
+
+* * *
+
+##### Line, Rectangle, Oval
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> canvas = Canvas(tk, width=500, height=500)
+>>> canvas.pack()
+>>> canvas.create_line(0, 100, 200, 0, fill='red', dash=(4, 4))
+>>> canvas.create_rectangle(50, 25, 150, 75, fill='blue')
+>>> canvas.create_oval(250, 250, 300, 300)
+```
+
+* * *
+
+##### Interactive drawing
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> canvas = Canvas(tk, width=500, height=500)
+>>> canvas.pack()
+>>> def paint(e):
+	canvas.create_oval(e.x - 1, e.y - 1, e.x + 1, e.y + 1, fill='green')
+>>> canvas.bind('<B1-Motion>', paint)
+>>> def clear(e):
+	canvas.delete('all')
+>>> canvas.bind('<Button-3>', clear) # Right-click
+```
+
+* * *
+
+### Code Combat
+- https://codecombat.com
+
+---
+
+# Week 9
+
+### Chapter 12 - Using TKinter for Better Graphics (Cont.)
+
+#### GUI Programming
+
+* * *
+
+##### Text
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> canvas = Canvas(tk, width=500, height=500)
+>>> canvas.pack()
+>>> canvas.create_text(150, 100, text='Once upon a time, there lived a wolf under a bridge')
+>>> canvas.create_text(150, 200, text='Once upon a time, there lived a wolf under a bridge', font=('Times', 15), fill='red')
+```
+
+* * *
+
+##### Polygons
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> canvas = Canvas(tk, width=500, height=500)
+>>> canvas.pack()
+>>> points = [0, 0, 500, 250, 0, 500]
+>>> canvas.create_polygon(points, outline='green', fill='yellow', width=3)
+```
+
+* * *
+
+##### Polygon -> triangle - move
+```
+import time
+from tkinter import *
+tk = Tk()
+canvas = Canvas(tk, width=400, height=400)
+canvas.pack()
+canvas.create_polygon(10, 10, 10, 60, 50, 35)
+for x in range(0, 60):
+    canvas.move(1, 5, 5)
+    tk.update()
+    time.sleep(0.05)
+```
+
+* * *
+
+##### Image
+```
+>>> from tkinter import *
+>>> tk = Tk()
+>>> canvas = Canvas(tk, width=400, height=400)
+>>> canvas.pack()
+>>> img = PhotoImage(file='C:\\Users\\someuser\\Documents\\Projects\\cat.gif')
+>>> canvas.create_image(0, 0, anchor=NW, image=img)
+
+>>> canvas.move(1, 5, 0)
+
+>>> def move(e):
+	if e.keysym == 'Up':
+		canvas.move(1, 0, -3)
+	elif e.keysym == 'Down':
+		canvas.move(1, 0, 3)
+	elif e.keysym == 'Left':
+		canvas.move(1, -3, 0)
+	else:
+		canvas.move(1, 3, 0)
+
+>>> canvas.bind_all('<KeyPress-Up>', move)
+>>> canvas.bind_all('<KeyPress-Down>', move)
+>>> canvas.bind_all('<KeyPress-Right>', move)
+>>> canvas.bind_all('<KeyPress-Left>', move)
+```
+
+* * *
+
+### Code Combat
+- https://codecombat.com
+
+---
+
+# Week 10
+
+### How to Become a Good Programmer?
+- Write a Beautiful Program
+- [Type Fast](/topic/how-to-type-fast)
+- Focus
+- What to do when you are stuck?
+
+### What to Do When You Are Stuck (more than 20 minutes)?
+- Search for a clue or answer (Google, Book, etc.)
+- [Talk to a rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging)
+- Ask for help (Talk to your friend or colleague)
+- Take a break (Go to restroom or go for a walk)
+
+### Quiz
+
+1. Guess the outcome of the following code, and then execute each line to verify your guess
+
+```
+type('Hello World')
+```
+```
+type(17)
+```
+```
+type(12.5)
+```
+```
+type([1, 3])
+```
+```
+type((1, 3))
+```
+```
+type({'first_name':'James', 'last_name':'Bond'})
+```
+
+2. Guess the outcome of the following code, and then execute each line to verify your guess
+
+```
+A = list(range(1, 11))
+A[2:8]
+A[2:]
+A[:8]
+A[2:8:2]
+A[::-1]
+```
+```
+A = [x*2 for x in range(1, 11)]
+```
+```
+from random import *
+A = [randint(1, 100) for _ in range(10)]
+```
+
+### Exception Handling
+
+* * *
+
+### Code Combat
+- https://codecombat.com
+
+---
+
+# Week 11
+
+### How to Become a Good Programmer?
+- Write a Beautiful Program
+- [Type Fast](/topic/how-to-type-fast)
+- Focus
+- What to do when you are stuck?
+- **Be fluent in Data Structure and Algorithms**
+
+### Violinist's Dying Wish
+- An extremely talented violinist who never learned how to read
+
+### Review Homework
+
+### Quiz
+
+1. Guess the outcome of the following code, and then execute each line to verify your guess
+
+```
+>>> a = 1
+>>> b = 2
+>>> def foo():
+	b = 10
+	c = 3
+	return a + b + c
+
+>>> foo()
+>>> print(a)
+>>> print(b)
+>>> print(c)
+```
+
+### Q & A
+
+
+### Chapter 14 - Finishing Your First Game: Bounce!
+
+- Follow the book by typing code and run the programming on each page. Make sure that the program runs successfully. If not, find bugs and fix them.
+- Don't type the entire code at the end of the chapter because it is more difficult to find bugs when the code is big.
+
+* * *
+
+### Code Combat
+- https://codecombat.com
+
+---
+
+# Week 12
+
+### How to Become a Good Programmer?
+- Write a Beautiful Program
+- [Type Fast](/topic/how-to-type-fast)
+- Focus
+- What to do when you are stuck?
+- Be fluent in Data Structure and Algorithms
+- Be a T-shaped person
+
+### What to Do When You Are Stuck (more than 20 minutes)?
+- Search for a clue or answer (Google, Book, etc.)
+- [Talk to a rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging)
+- Ask for help (Talk to your friend or colleague)
+- Take a break (Go to restroom or go for a walk)
+
+### Quiz
+
+1. Guess the outcome of the following code, and then execute each line to verify your guess
+
+```
+>>> class Person(object):
+	    def say(self):
+		    print('I\'m a person')
+
+>>> class Student(Person):
+	    pass
+
+>>> bob = Student()
+>>> bob.say()
+```
+
+2. Guess the outcome of the following code, and then execute each line to verify your guess
+
+```
+>>> class Person(object):
+	    def say(self):
+		    print('I\'m a person.')
+
+>>> class Student(Person):
+	    def say(self):
+	        print('I\'m a student.')
+
+>>> bob = Student()
+>>> bob.say()
+```
+
+
+3. Guess the outcome of the following code, and then execute each line to verify your guess
+
+```
+>>> class Person(object):
+	    def say(self):
+		    print('I\'m a person.')
+
+>>> class Student(Person):
+        def say(self):
+            super(Student, self).say()
+	        print('I\'m a student.')
+
+>>> bob = Student()
+>>> bob.say()
+```
+
+### Unit Testing
+
+
+* * *
+
+### Code Combat
+- https://codecombat.com
+
